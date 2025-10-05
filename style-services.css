@@ -76,23 +76,9 @@
 /* -----------------------------
    En-tête avec logo
 ------------------------------ */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--creme);
-  box-shadow: var(--shadow-soft);
-}
-.header-actions {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: var(--creme);
-  padding: 1rem 0.75rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
+
+
+
 
 .header-content {
   display: grid;
@@ -352,4 +338,3 @@ footer p {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
