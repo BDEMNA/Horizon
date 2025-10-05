@@ -1,0 +1,345 @@
+/* -----------------------------
+   Variables et base
+------------------------------ */
+:root {
+  --bois: #8B5E3C;
+  --creme: #F7F3EE;
+  --olive: #7A8A61;
+  --anthra: #2E2E2E;
+
+  --text: #2E2E2E;
+  --muted: #6f6f6f;
+
+  --radius: 14px;
+  --radius-sm: 10px;
+
+  --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --shadow-lift: 0 18px 40px rgba(0, 0, 0, 0.12);
+
+  --container: 1100px;
+
+  --transition-fast: 160ms ease;
+  --transition: 280ms ease;
+  --transition-slow: 480ms ease;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+/* -----------------------------
+   Boutons génériques
+------------------------------ */
+.btn {
+  --btn-bg: var(--olive);
+  --btn-fg: #fff;
+  --btn-outline-fg: var(--bois);
+  display: inline-block;
+  padding: 0.9rem 1.25rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+  font-family: "Montserrat", system-ui, sans-serif;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+  will-change: transform;
+}
+
+.btn.primary {
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+  background: #6b7b52; /* olive foncé */
+}
+
+.btn.outline {
+  background: transparent;
+  color: var(--btn-outline-fg);
+  border: 2px solid var(--btn-outline-fg);
+}
+
+.btn.outline:hover {
+  transform: translateY(-2px);
+  background: var(--bois);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+/* -----------------------------
+   En-tête avec logo
+------------------------------ */
+.site-header {
+  background: linear-gradient(180deg, #fff8f1 0%, var(--creme) 70%);
+  border-bottom: 1px solid rgba(46, 46, 46, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: saturate(1.1) blur(6px);
+}
+
+.header-content {
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* logo | texte | actions */
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0.75rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 8px;
+  transition: transform var(--transition), filter var(--transition);
+  will-change: transform;
+}
+.logo:hover { transform: rotate(1deg); filter: brightness(1.04); }
+
+/* Nouveau logo image */
+.logo-img {
+  width: 140px;
+  height: auto;
+  display: block;
+}
+
+/* Marque */
+.brand-title {
+  margin: 0;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  letter-spacing: 0.08rem;
+  color: var(--anthra);
+}
+
+.brand-subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* -----------------------------
+   Animations logo (si utilisé)
+------------------------------ */
+@keyframes sunRise {
+  0% { transform: translateY(18px); opacity: 0.2; }
+  50% { transform: translateY(6px); opacity: 0.85; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes raysPulse {
+  0% { opacity: 0; transform: scale(0.9); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.logo-animate .logo-sun-group { transform-origin: 100px 70px; animation: sunRise 1200ms var(--transition-slow) forwards; }
+.logo-animate .logo-rays { transform-origin: 100px 70px; animation: raysPulse 1500ms ease-in-out 300ms both; }
+html { scroll-behavior: smooth; }
+/* ===========================
+   Styles généraux
+   =========================== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: #fafafa;
+  color: #222;
+}
+
+h1, h2, h3 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.section {
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   Aperçu des services
+   =========================== */
+.about-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.about-grid article {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.about-grid article:hover {
+  transform: translateY(-4px);
+}
+
+/* ===========================
+   Onglets
+   =========================== */
+.service-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.service-tabs button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.service-tabs button:hover {
+  background: #ddd;
+}
+
+.service-tabs button.active {
+  background: #c49a6c; /* couleur bois Horizon */
+  color: #fff;
+}
+
+/* ===========================
+   Sections de services
+   =========================== */
+.service-section {
+  display: none;
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.service-section.active {
+  display: block;
+  animation: fade 0.4s ease-in;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 768px) {
+  .header-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ===========================
+   Switch Images / Vidéos
+   =========================== */
+.media-switch {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.media-switch button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.media-switch button:hover {
+  background: #ccc;
+}
+
+.media-switch button.active {
+  background: #c49a6c;
+  color: #fff;
+}
+
+/* ===========================
+   Galeries médias
+   =========================== */
+.media-gallery {
+  display: none;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.media-gallery.active {
+  display: block;
+}
+
+.media-gallery img,
+.media-gallery video {
+  max-width: 100%;
+  margin: 0.5rem auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===========================
+   Footer
+   =========================== */
+footer {
+  background: #222;
+  color: #eee;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
