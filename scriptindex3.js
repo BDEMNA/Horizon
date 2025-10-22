@@ -1,5 +1,5 @@
 /* ==========================================================================
-   HORIZON – JS global (optimisé)
+   HORIZON – JS global
    Fonctions : fade-in, formulaire, toast, CTA mobile, scroll progress,
    retour en haut, menu burger, lazy loading, accessibilité, dark mode
    ========================================================================== */
@@ -92,59 +92,41 @@ function showToast(message) {
 }
 
 // -----------------------------
-// CTA fixe sur mobile (debounce resize)
+// CTA fixe sur mobile
 // -----------------------------
 function handleFixedCTA() {
   const cta = document.querySelector('.fixed-cta');
   if (!cta) return;
   cta.style.display = (window.innerWidth <= 420) ? 'flex' : 'none';
 }
-
-let resizeTimeout;
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(handleFixedCTA, 150);
-});
+window.addEventListener('resize', handleFixedCTA);
 window.addEventListener('load', handleFixedCTA);
 
 // -----------------------------
-// Scroll optimisé : progress bar + back-to-top
+// Barre de progression au scroll
 // -----------------------------
 const progressBar = document.querySelector('.scroll-progress');
-const backToTop = document.querySelector('.back-to-top');
-
-function handleScroll() {
-  const scrollTop = window.scrollY;
-  const docHeight = document.body.scrollHeight - window.innerHeight;
-
-  // Progress bar
-  if (progressBar) {
+if (progressBar) {
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
     const progress = (scrollTop / docHeight) * 100;
     progressBar.style.width = progress + "%";
-  }
+  });
+}
 
-  // Bouton retour en haut
-  if (backToTop) {
-    if (scrollTop > 400) {
+// -----------------------------
+// Bouton retour en haut
+// -----------------------------
+const backToTop = document.querySelector('.back-to-top');
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
       backToTop.classList.add('visible');
     } else {
       backToTop.classList.remove('visible');
     }
-  }
-}
-
-let ticking = false;
-window.addEventListener('scroll', () => {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      handleScroll();
-      ticking = false;
-    });
-    ticking = true;
-  }
-});
-
-if (backToTop) {
+  });
   backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
