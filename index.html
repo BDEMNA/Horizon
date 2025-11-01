@@ -1,285 +1,293 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HORIZON - Site temporairement indisponible</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="utf-8">
+  <title>HORIZON – Design & Création sur mesure</title>
+  <meta name="description" content="HORIZON conçoit et rénove des piscines, sols décoratifs et résines epoxy. Artisanat sur mesure, finitions haut de gamme, service rapide.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+  <!-- Polices -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-width: 600px;
-            width: 100%;
-            padding: 50px 40px;
-            text-align: center;
-            animation: slideIn 0.6s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .icon {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        .icon svg {
-            width: 50px;
-            height: 50px;
-            fill: white;
-        }
-
-        h1 {
-            color: #2d3748;
-            font-size: 32px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            color: #667eea;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        p {
-            color: #4a5568;
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .info-box {
-            background: #f7fafc;
-            border-left: 4px solid #667eea;
-            padding: 20px;
-            margin: 30px 0;
-            text-align: left;
-            border-radius: 8px;
-        }
-
-        .info-box h3 {
-            color: #2d3748;
-            font-size: 18px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .info-box ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .info-box li {
-            color: #4a5568;
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .info-box li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-        }
-
-        .contact-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 30px;
-            border-radius: 12px;
-            margin-top: 30px;
-        }
-
-        .contact-section h3 {
-            color: white;
-            font-size: 20px;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-item {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            color: white;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-
-        .contact-item:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-2px);
-        }
-
-        .contact-item svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-        }
-
-        .btn-whatsapp {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #25D366;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            margin-top: 20px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-whatsapp:hover {
-            background: #1fb855;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-        }
-
-        .btn-whatsapp svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
-
-        .footer {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
-            color: #718096;
-            font-size: 14px;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 25px;
-            }
-
-            h1 {
-                font-size: 26px;
-            }
-
-            .subtitle {
-                font-size: 16px;
-            }
-        }
-    </style>
+  <!-- Votre CSS compilé (incluez le fichier existant modifié responsive) -->
+  <link rel="stylesheet" href="styleindex3.css">
 </head>
 <body>
-    <div class="container">
-        <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
-            </svg>
-        </div>
 
-        <div class="subtitle">Projet HORIZON</div>
-        <h1>Site temporairement indisponible</h1>
-        
-        <p>Le site web HORIZON est actuellement suspendu en raison d'un paiement en attente. Pour réactiver votre vitrine digitale et continuer à générer des prospects, veuillez régulariser votre situation.</p>
+<!-- En-tête -->
+<header class="site-header" role="banner">
+  <div class="container header-content">
+    <!-- Nouveau logo image -->
+    <a href="index.html" class="logo" aria-label="Accueil HORIZON">
+      <img src="images/logo-horizon.jpg" 
+           alt="Logo HORIZON – Béton décoratif, résine epoxy & revêtement de piscine" 
+           class="logo-img" />
+    </a>
 
-        <div class="info-box">
-            <h3>Rappel de ce que vous perdez :</h3>
-            <ul>
-                <li>Visibilité 24h/24 pour vos services de piscines et béton décoratif</li>
-                <li>Génération automatique de leads via WhatsApp et formulaire</li>
-                <li>Crédibilité professionnelle face à vos concurrents</li>
-                <li>Galerie de réalisations accessible aux prospects</li>
-                <li>Référencement Google actif</li>
-            </ul>
-        </div>
-
-        <div class="contact-section">
-            <h3>Contactez le concepteur pour réactiver votre site</h3>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
-                    <span>daarel700@gmail.com</span>
-                </div>
-                
-                <div class="contact-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                    </svg>
-                    <span>+241 74 10 07 17</span>
-                </div>
-            </div>
-
-            <a href="https://wa.me/241074100717?text=Bonjour%20Darel,%20je%20souhaite%20r%C3%A9activer%20le%20site%20HORIZON" class="btn-whatsapp" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                </svg>
-                Contacter sur WhatsApp
-            </a>
-        </div>
-
-        <div class="footer">
-            <p><strong>Investissement projet HORIZON :</strong> 1 500 000 FCFA<br>
-            Un seul contrat peut couvrir le coût du site et générer un retour significatif.</p>
-        </div>
+    <div>
+      <h1 class="brand-title">HORIZON</h1>
+      <p class="brand-subtitle">Construction et rénovation de piscines · Béton décoratif · Résine epoxy</p>
     </div>
+
+    <nav class="header-actions" aria-label="Actions principales">
+      <a class="btn primary" href="#contact">Demander un devis</a>
+      <a class="btn outline" 
+   href="https://api.whatsapp.com/send/?phone=%2B241062828096&text=Bonjour%20HORIZON%2C%20je%20souhaite%20un%20devis." 
+   target="_blank" 
+   rel="noopener">
+   Appeler/WhatsApp
+</a>
+
+    </nav>
+  </div>
+</header>
+
+
+  <!-- Hero visuel -->
+  <section class="section fade-section" id="top" role="region" aria-labelledby="hero-title">
+    <div class="container">
+      <h2 class="section-title" id="hero-title">Artisanat sur mesure, finitions haut de gamme</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Nous transformons vos idées en espaces qui vous ressemblent : piscines, sols 3D, carrelage décoratif, résine epoxy et maçonnerie de précision.</p>
+          <p><strong>Notre promesse :</strong> conseil clair, matériaux durables, délais maîtrisés et esthétique irréprochable.</p>
+          <p class="signature">— Atelier HORIZON</p>
+          <div class="header-actions" style="margin-top: 0.8rem;">
+            <a class="btn primary" href="#contact">Recevoir mon devis gratuit</a>
+            <a class="btn outline" href="#services">Découvrir nos services</a>
+          </div>
+        </div>
+        <figure class="about-image">
+          <img src="images/realisation12.jpg" alt="Piscine moderne avec dallage décoratif réalisé par HORIZON">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- À propos -->
+  <section class="section fade-section" id="a-propos" role="region" aria-labelledby="about-title">
+    <div class="container">
+      <h2 class="section-title" id="about-title">À propos</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>HORIZON allie savoir‑faire en maçonnerie, design d’intérieur et travail du bois. Grâce à la gravure laser, nous personnalisons vos carreaux et matériaux avec des motifs uniques.</p>
+          <p>Basés en Estuaire, nous adaptons chaque projet au contexte local, aux habitudes et aux contraintes techniques.</p>
+        </div>
+        <figure class="about-image">
+          <img src="images/atelier.png" alt="Artisan HORIZON travaillant avec des outils de maçonnerie et de finition">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+ <!-- Services avec bénéfices -->
+<section class="section fade-section" id="services" role="region" aria-labelledby="services-title">
+  <div class="container">
+    <h2 class="section-title" id="services-title">Nos services</h2>
+
+    <div class="about-grid" style="grid-template-columns: 1fr 1fr;">
+      <article>
+        <h3><span aria-hidden="true">🏊</span> Construction de piscine</h3>
+        <p><strong>Bénéfice :</strong> votre bassin sur mesure, durable et élégant, avec filtration optimisée et finitions premium.</p>
+      </article>
+
+      <article>
+        <h3><span aria-hidden="true">🛠️</span> Rénovation de piscine</h3>
+        <p><strong>Bénéfice :</strong> redonnez vie à votre bassin avec étanchéité renforcée et design actualisé.</p>
+      </article>
+
+      <article>
+        <h3><span aria-hidden="true">🧱</span> Maçonnerie et finitions</h3>
+        <p><strong>Bénéfice :</strong> bases solides et finitions nettes pour terrasses, allées et aménagements extérieurs.</p>
+      </article>
+
+      <article>
+        <h3><span aria-hidden="true">🧩</span> Pose de carrelage</h3>
+        <p><strong>Bénéfice :</strong> motifs géométriques précis, joints réguliers et durabilité maximale.</p>
+      </article>
+
+      <article>
+        <h3><span aria-hidden="true">🧪</span> Résine epoxy & sols 3D</h3>
+        <p><strong>Bénéfice :</strong> surfaces miroir, anti‑taches, designs immersifs (océan, cascade, floral).</p>
+      </article>
+
+      <article>
+        <h3><span aria-hidden="true">🔬</span> Gravure laser</h3>
+        <p><strong>Bénéfice :</strong> personnalisation de carreaux et bois avec motifs durables et identitaires.</p>
+      </article>
+    </div>
+
+    <!-- Bouton Voir plus -->
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="services.html" class="btn primary">Voir plus de services</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Réalisations (galerie simple) -->
+  <section class="section fade-section" id="realisations" role="region" aria-labelledby="work-title">
+    <div class="container">
+      <h2 class="section-title" id="work-title">Quelques réalisations</h2>
+
+      <div class="about-grid" style="grid-template-columns: 1fr 1fr;">
+          <figure class="gallery-item">
+          <img src="images/realisation1.jpg" alt="Réalisation 1 – meuble sur mesure en bois" loading="lazy" width="600" height="400" />
+          <figcaption>Damier brun‑doré</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/realisation2.jpg" alt="Réalisation 2 – gravure laser sur carreau" loading="lazy" width="600" height="400" />
+          <figcaption>Dallage terracotta à frise grise</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/realisation3.jpg" alt="Réalisation 3 – décoration intérieure" loading="lazy" width="600" height="400" />
+          <figcaption>Natte noir bordé de carreaux rouges</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/realisation4.jpg" alt="Réalisation 4 – maçonnerie extérieure" loading="lazy" width="600" height="400" />
+          <figcaption>Pavement brun texturé brillant</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/realisation5.jpg" alt="Réalisation 5 – table en bois massif" loading="lazy" width="600" height="400" />
+          <figcaption>Allée rouge à pavés texturés</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/realisation6.jpg" alt="Réalisation 6 – motif gravé sur bois" loading="lazy" width="600" height="400" />
+          <figcaption>Sol epoxy effet aquatique</figcaption>
+        </figure>
+           <figure class="gallery-item">
+          <img src="images/realisation7.jpg" alt="Réalisation 6 – motif gravé sur bois" loading="lazy" width="600" height="400" />
+          <figcaption>Revêtement epoxy à motifs floraux</figcaption>
+        </figure>
+           <figure class="gallery-item">
+          <img src="images/realisation8.jpg" alt="Réalisation 6 – motif gravé sur bois" loading="lazy" width="600" height="400" />
+          <figcaption>Bassin décoré faune sous‑marine</figcaption>
+        </figure>
+           <figure class="gallery-item">
+          <img src="images/realisation9.jpg" alt="Réalisation 6 – motif gravé sur bois" loading="lazy" width="600" height="400" />
+          <figcaption>ffet trompe‑l’œil bord de mer</figcaption>
+        </figure>
+           <figure class="gallery-item">
+          <img src="images/realisation10.jpg" alt="Réalisation 6 – motif gravé sur bois" loading="lazy" width="600" height="400" />
+          <figcaption>Tapis éclaboussures noir et blanc</figcaption>
+        </figure>
+           <figure class="gallery-item">
+          <img src="images/realisation11.jpg" alt="Réalisation 6 – motif gravé sur bois" loading="lazy" width="600" height="400" />
+          <figcaption>Fresque murale léopard et cascade</figcaption>
+        </figure>
+           <figure class="gallery-item">
+          <img src="images/realisation12.jpg" alt="Réalisation 6 – motif gravé sur bois" loading="lazy" width="600" height="400" />
+          <figcaption>Revêtement aquatique pour escalier</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/realisation13.jpg" alt="Réalisation 6 – motif gravé sur bois" loading="lazy" width="600" height="400" />
+          <figcaption>Effet aquarium sous le plancher</figcaption>
+        </figure>
+       <figure class="gallery-item">
+          <img src="images/realisation14.jpg" alt="Réalisation 6 – motif gravé sur bois" loading="lazy" width="600" height="400" />
+          <figcaption>Allée en briques imbriquées sombres</figcaption>
+        </figure>
+           <figure class="gallery-item">
+          <img src="images/realisation15.jpg" alt="Réalisation 6 – motif gravé sur bois" loading="lazy" width="600" height="400" />
+          <figcaption>Revêtement extérieur mosaïque moderne</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages -->
+  <section class="section fade-section" id="temoignages" role="region" aria-labelledby="testimonials-title">
+    <div class="container">
+      <h2 class="section-title" id="testimonials-title">Ils nous font confiance</h2>
+      <div class="about-grid">
+        <blockquote>
+          <p>« Travail impeccable, délais respectés et finitions superbes. Notre terrasse a complètement changé d’allure. »</p>
+          <cite>— M. N., Akanda</cite>
+        </blockquote>
+        <blockquote>
+          <p>« HORIZON a rénové notre piscine avec un rendu très propre. Le suivi a été pro du début à la fin. »</p>
+          <cite>— Mme A., Libreville</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section fade-section" id="faq" role="region" aria-labelledby="faq-title">
+    <div class="container">
+      <h2 class="section-title" id="faq-title">Questions fréquentes</h2>
+      <div class="about-grid">
+        <article>
+          <h3>Combien de temps dure une rénovation de piscine ?</h3>
+          <p>Selon l’état et la taille : 1 à 3 semaines, incluant étanchéité, finitions et tests.</p>
+        </article>
+        <article>
+          <h3>Proposez‑vous des devis gratuits ?</h3>
+          <p>Oui, nous réalisons une visite et un devis détaillé sans frais.</p>
+        </article>
+        <article>
+          <h3>Vos sols epoxy sont‑ils antidérapants ?</h3>
+          <p>Nous proposons des finitions adaptées (mat ou satin, additifs antidérapants si besoin).</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Devis -->
+<section class="section fade-section" id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact & Devis</h2>
+    <p>Décrivez votre projet, nous vous répondons rapidement.</p>
+
+    <!-- Formulaire Formspree -->
+    <form action="https://formspree.io/f/xkgqzrpz" method="POST" class="about-text">
+      <div class="about-grid" style="grid-template-columns: 1fr 1fr;">
+        <div>
+          <label for="name"><strong>Nom</strong></label>
+          <input id="name" type="text" name="name" placeholder="Votre nom" required>
+        </div>
+        <div>
+          <label for="email"><strong>Email</strong></label>
+          <input id="email" type="email" name="email" placeholder="Votre adresse email" required>
+        </div>
+      </div>
+
+      <div style="margin-top:1rem;">
+        <label for="message"><strong>Message</strong></label>
+        <textarea id="message" name="message" rows="4" placeholder="Décrivez votre projet..." required></textarea>
+      </div>
+
+      <div class="header-actions" style="margin-top:1rem;">
+        <button type="submit" class="btn primary">Envoyer</button>
+      </div>
+    </form>
+  </div>
+</section>
+        <p id="contact-help" class="brand-subtitle" style="margin-top:0.6rem;">Nous ne partageons jamais vos informations. Réponse sous 24–48h.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="section" role="contentinfo">
+    <div class="container">
+      <p>© 2025 HORIZON – Design & Création sur mesure</p>
+      <p>Site conçu par Demna Studio</p>
+    </div>
+  </footer>
+ <script src="scriptindex3.js" defer></script>
+
+  <!-- JS minimal pour fade-in (optionnel si déjà en place) -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
+
